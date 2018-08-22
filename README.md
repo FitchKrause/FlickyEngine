@@ -2,6 +2,7 @@
 Flicky is a open-source Game Maker Studio (1.4.x - 2.x) 
 Engine. 
 
+* Current Status: Working on new Build (0.7)
 * Requirements: **Game Maker:Studio 1.4.x** (Latest > 1.4.1773) or **Game Maker:Studio 2**
 
 Credits:
@@ -51,5 +52,3 @@ Credits:
 * mttwbarajas
 * Savordez
 * Swift
-
-WlRJZ1pUWWdaallnWmpZZ016Y2dNRElnTlRjZ1pqWWdPVGNnTURJZ05UWWdOVFlnTXpVPQ
