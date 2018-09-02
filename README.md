@@ -24,6 +24,9 @@ Credits:
 * A.NB
 * Savordez
 * 
+* Sprites:
+* MrLevRocks
+* 
 * Music:
 * MaxieDaMan (Michael Staple)
 * 
