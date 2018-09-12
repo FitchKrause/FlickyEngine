@@ -1,0 +1,9 @@
+Patch Notes: 1.5.3
+-----------------------------------------------------------------------------------------
+- Remade HUD to work with multiple resolutions.
+- Allow to take in-game screenshots with F12.
+- Fixed ceiling bugs that prevented the character from falling/rolling of ceiling slopes.
+- Fixed/Improved the badnik destroy/hurt script.
+- Fixed Electricity shield infinite-jump glitch.
+- Removed (yet) unimplemented features.
+
