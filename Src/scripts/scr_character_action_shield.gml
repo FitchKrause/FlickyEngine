@@ -1,6 +1,20 @@
 ///scr_character_action_shield()
 // Handles each shield ability!
    
+   // Cool Down:              
+      if(ShieldCoolDown > 0)
+      {
+         ShieldCoolDown--;
+      }
+      
+   // Stop Electro spam:
+      if(Shield == ShieldElectricity)
+      {
+         if(instance_exists(obj_electricity_spark) && YSpeed >= 0){
+            ShieldUsable = false;
+         }   
+      }   
+               
    // Only run if we're not invincible:
       if(Invincibility < 1.5){
    
@@ -46,6 +60,7 @@
                   
       }
       
+   
    // Shield Attack:
       if(ShieldUsable == true && CharacterID == CharacterSonic && global.BonusStage == false){
          if(!Ground && Animation = "ROLL" && KeyAction_Pressed){
@@ -89,6 +104,9 @@
                   // Play Shield sound:  
                      PlaySound(snd_shield_use_electricity, global.SFXVolume, -1, true)
                      
+                  // Set Cooldown:
+                     ShieldCoolDown = 15;
+                     
                   // Create Electric Sparks:
                      for(i = 0; i < 4; i++){
                          Spark = instance_create(floor(x-3), floor(y), obj_electricity_spark);
@@ -101,7 +119,7 @@
                      }   
                      
                }
-               
+
             // ----------------------------------------------------------------------------------- //                           
                      
             // Bubble Shield:
