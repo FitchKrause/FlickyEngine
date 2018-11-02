@@ -134,6 +134,7 @@
       ShieldBackup   = 0;        // Used when in super/hyper form and getting a shield.
       ShieldUsable   = 0;        // Whether or not we can use a shield.
       ShieldAttack   = 0;        // Checks if we're attacking using a shield.
+      ShieldCoolDown = 0;        // Prevent insta-use of electricity shield on ceilings.
       FloorMode      = 0;        // Returns the floor mode.
        
    // Rendering:
@@ -1682,25 +1683,20 @@ if (Allow_YMovement) {
 }
      
     // Fall off the ground if the edges aren't colliding         
-       if(Ground &amp;&amp; ( FloorMode = 1 || FloorMode = 3 ) /*Angle != global.GravityAngle*/ &amp;&amp; LockTunnel = 0){
-          if( scr_character_collision_left_edge(x, y, Angle) == false
-          ||(scr_character_collision_right_edge(x,y,  Angle) == false)){
-             if(Action != ActionRolling &amp;&amp; PeeloutFlag != 1){
+       if(Ground &amp;&amp; Angle != 0){
+          if(!scr_character_collision_left_edge(x, y, Angle) || !scr_character_collision_right_edge(x, y, Angle)){
+             if(FloorMode == 1 || FloorMode == 3){
                 GSpeed        = XSpeed;             
-                YSpeed        = -(dsin(RelativeAngle) * GSpeed+1)                           
-                if(Angle &gt;= 60 &amp;&amp; Angle &lt;= 300 &amp;&amp; Angle != 180){
-                   LaunchedTimer = 3;                 
-                }                  
+                YSpeed        = -(dsin(RelativeAngle) * GSpeed)                           
+                LaunchedTimer = 3;     
+                XSpeed        = cos(degtorad(RelativeAngle))*XSpeed;
+                Ground        = false;                             
              }else{
-                GSpeed        = XSpeed;             
-                YSpeed        = -(dsin(RelativeAngle) * GSpeed+1)   
-                if(Angle &gt;= 60 &amp;&amp; Angle &lt;= 300 &amp;&amp; Angle != 180){
-                   LaunchedTimer = 3;
-                }          
+                Ground        = false;
+                YSpeed        = -sin(degtorad(Angle))*XSpeed;
+                XSpeed        = cos(degtorad(Angle))*XSpeed;                   
              }
-                XSpeed = cos(degtorad(RelativeAngle))*XSpeed;
-                Ground = false;                 
-             }    
+          }
        }
     
     // Get the GSpeed:   
