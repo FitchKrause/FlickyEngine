@@ -2,7 +2,7 @@
 # THIS ENGINE IS CANCELLED! 
 
 Flicky is a open-source Game Maker Studio (1.4.x - 2.x) 
-Engine. 
+Engine created by F4LK. Later continued and completed by A.NB. 
 
 * Requirements: **Game Maker:Studio 1.4.x** (1.4.1999) or **Game Maker:Studio 2**
 
