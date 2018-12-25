@@ -1,5 +1,6 @@
 # FlickyEngine
 # THIS ENGINE IS CANCELLED! 
+# Use: https://github.com/Aleknorberg/S8E instead. 
 
 Flicky is a open-source Game Maker Studio (1.4.x - 2.x) 
 Engine created by F4LK. Later continued and completed by A.NB. 
